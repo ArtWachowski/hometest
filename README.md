@@ -1,20 +1,25 @@
 # Readme
 
-Hi, Thanks for reading this.
+Hi! 
 
 ## Installation
 
-No additional packages required
+git clone https://github.com/ArtWachowski/hometest.git
 
 ## Usage
 
 ```python
 
-python3 hsine.py
+1. python3 hsine.py
+
+2. cat output.txt
 
 ```
 
 ## Contributing
 
+N/A
 
 ## License
+
+N/A

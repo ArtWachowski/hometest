@@ -1,24 +1,12 @@
 #!/usr/bin/python
 from distance import Distance
-import requests, json
+from file import File
+#import json
 
 # mean earth radius - https://en.wikipedia.org/wiki/Earth_radius#Mean_radius
 EARTH = 6371.0088
 OFFICE = (53.339428, -6.257664)
 URL="https://s3.amazonaws.com/intercom-take-home-test/customers.txt"
-
-#Returns txt from spoecified URL
-def get_file():
-    r = requests.get(URL)
-    s = r.text
-    return s
-
-#Returns list of jsons
-def parse_file(j):
-    list = []
-    for i in j.split('\n'):
-        list.append(json.loads(i)) 
-    return list
 
 #Sorts filtered guest list
 def sort_list(l):
@@ -43,8 +31,8 @@ def save_file(f):
 
 def main():
     k = Distance(EARTH,OFFICE) 
-    file = get_file()
-    list = parse_file(file)
+    f = File(URL)
+    list = f.parse_file()
     guest_list = make_glist(k,list)
     save_file(guest_list)
 

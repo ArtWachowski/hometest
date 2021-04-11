@@ -20,24 +20,24 @@ class TestValidator(unittest.TestCase):
         self.user_id = [33,55,77,2]
         self.list = []
 
+        for i in range(len(self.name)):
+            s = {"latitude": self.testLat[i], "user_id": self.user_id[i] , "name": self.name[i], "longitude": self.testLon[i]}
+            self.list.append(s)
+
     #Testing haversine formula 
-    def test_distance(self):
+    def test_a_distance(self):
         a = Distance(self.earth, self.office)
 
         for i in range(len(self.result)):
             distance = a.get_km(self.testLat[i],self.testLon[i])
             #print(distance, self.name[i])
             self.assertEqual(distance,self.result[i])
-
         print('DISTANCE TESTS PASSED')
+
     #Testing Guest List filtering function
-    def test_guestlist(self):
+    def test_b_guestlist(self):
         a = Distance(self.earth, self.office)
         b = Hsine(self.earth, self.office,"url") 
-
-        for i in range(len(self.name)):
-            s = {"latitude": self.testLat[i], "user_id": self.user_id[i] , "name": self.name[i], "longitude": self.testLon[i]}
-            self.list.append(s)
         mkgl = b.make_glist(a,self.list)
 
         #user_id's 2 and 77 should appeared in sorted list ascendingly
@@ -49,7 +49,7 @@ class TestValidator(unittest.TestCase):
 
 
     #Pastebin link with "This is test!" text > verifies if it was correctly parsed 
-    def test_url(self):
+    def test_c_url(self):
         u = File(self.url1)
         t = u.get_file()
         self.assertEqual(t,"This is test!")
@@ -60,7 +60,7 @@ class TestValidator(unittest.TestCase):
         if not pl.Path(path).resolve().is_file():
             raise AssertionError("File does not exist: %s" % str(path))
 
-    def test_filesave(self):
+    def test_d_filesave(self):
         h = Hsine(self.earth, self.office,"url")
         h.save_file(self.list)
         cwd = pl.Path.cwd()

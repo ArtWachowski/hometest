@@ -1,12 +1,16 @@
 # Readme
 
-... 
+Script will parse data directly from provided URL and store grades to output.txt locally.
+
+When running script `python3 hsine.py -t` the output.txt will contain test data.
 
 ## Installation
 
 git clone https://github.com/ArtWachowski/hometest.git
 
 ## Usage
+
+Navigate to hometest directory `cd hometest`
 
 ```python
 
@@ -22,6 +26,8 @@ optional arguments:
 
 ## Testing 
 
+Script was developed and tested on linux.
+
 ```python
 
 python3 hsine.py -t 
@@ -30,4 +36,4 @@ python3 hsine.py -t
 
 ## License
 
-N/A
+CC

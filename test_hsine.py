@@ -31,7 +31,6 @@ class TestValidator(unittest.TestCase):
 
         for i in range(len(self.result)):
             distance = a.get_km(self.testLat[i],self.testLon[i])
-            #print(distance, self.name[i])
             self.assertEqual(distance,self.result[i])
         print('DISTANCE TESTS PASSED')
 
@@ -67,7 +66,7 @@ class TestValidator(unittest.TestCase):
         cwd = pl.Path.cwd()
         path = str(cwd) + "/output.txt"
         self.assertIsFile(path)
-        print("SAVE FILE  TESTS PASSED")
+        print("SAVE FILE TEST PASSED")
 
 
 if __name__ == '__main__':

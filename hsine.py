@@ -36,7 +36,6 @@ class Hsine:
     def save_file(self,f):
         with open('output.txt','w') as writeme:
             for l in range(len(f)):
-                print(f[l])
                 writeme.write('%s\n' % f[l])
 
     def main(self):
@@ -46,6 +45,8 @@ class Hsine:
         list = f.parse_file()
         guest_list = self.make_glist(k,list)
         self.save_file(guest_list)
+        for i in range(len(guest_list)):
+            print(guest_list[i])
         print("\nFinish \nPlease check output.txt file too.")
 
 if __name__ == "__main__":

@@ -1,16 +1,4 @@
-{'name': 'Ian Kehoe', 'user_id': 4}
-{'name': 'Nora Dempsey', 'user_id': 5}
-{'name': 'Theresa Enright', 'user_id': 6}
-{'name': 'Eoin Ahearn', 'user_id': 8}
-{'name': 'Richard Finnegan', 'user_id': 11}
-{'name': 'Christina McArdle', 'user_id': 12}
-{'name': 'Olive Ahearn', 'user_id': 13}
-{'name': 'Michael Ahearn', 'user_id': 15}
-{'name': 'Patricia Cahill', 'user_id': 17}
-{'name': 'Eoin Gallagher', 'user_id': 23}
-{'name': 'Rose Enright', 'user_id': 24}
-{'name': 'Stephen McArdle', 'user_id': 26}
-{'name': 'Oliver Ahearn', 'user_id': 29}
-{'name': 'Nick Enright', 'user_id': 30}
-{'name': 'Alan Behan', 'user_id': 31}
-{'name': 'Lisa Ahearn', 'user_id': 39}
+{'latitude': 52.1581198, 'user_id': 33, 'name': 'test1', 'longitude': -7.15054}
+{'latitude': -23.781300385747006, 'user_id': 55, 'name': 'test2', 'longitude': -45.3963001023727}
+{'latitude': 53.33197166003888, 'user_id': 77, 'name': 'test3', 'longitude': -6.377250646780829}
+{'latitude': 53.302452, 'user_id': 2, 'name': 'test4', 'longitude': -6.126921}

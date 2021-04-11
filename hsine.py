@@ -8,37 +8,48 @@ EARTH = 6371.0088
 OFFICE = (53.339428, -6.257664)
 URL="https://s3.amazonaws.com/intercom-take-home-test/customers.txt"
 
-#Sorts filtered guest list
-def sort_list(l):
-    l.sort(key = lambda x : x["user_id"])
-    return l
+class Hsine:
 
-#Returns sorted by ID and filtered by distance guest list 
-def make_glist(k,l):
-    guest_list = []
-    for i in range(len(l)):
-        km = k.get_km(l[i]["latitude"],l[i]["longitude"])
-        if km <= 100:
-            s={"name":l[i]["name"],"user_id":l[i]["user_id"]} #,"K": km}
-            guest_list.append(s)
-    return sort_list(guest_list)
+    def __init__(self, earth, office, url):
+        self.earth = earth
+        self.office = office
+        self.url = url
 
-#Save Glist to output.txt
-def save_file(f):
-    with open('output.txt','w') as writeme:
-        for l in range(len(f)):
-            writeme.write('%s\n' % f[l]) 
+    #Sorts filtered guest list
+    def sort_list(self,l):
+        l.sort(key = lambda x : x["user_id"])
+        return l
 
-def main():
-    k = Distance(EARTH,OFFICE) 
-    f = File(URL)
-    list = f.parse_file()
-    guest_list = make_glist(k,list)
-    save_file(guest_list)
+    #Returns sorted by ID and filtered by distance guest list
+    def make_glist(self,k,l):
+        guest_list = []
+        for i in range(len(l)):
+            km = k.get_km(l[i]["latitude"],l[i]["longitude"])
+            if km <= 100:
+                s={"name":l[i]["name"],"user_id":l[i]["user_id"]} #,"K": km}
+                guest_list.append(s)
+        return self.sort_list(guest_list)
+
+    #Save Glist to output.txt
+    def save_file(self,f):
+        with open('output.txt','w') as writeme:
+            for l in range(len(f)):
+                print(f[l])
+                writeme.write('%s\n' % f[l])
+
+    def main(self):
+        print("Start \n")
+        k = Distance(self.earth,self.office)
+        f = File(self.url)
+        list = f.parse_file()
+        guest_list = self.make_glist(k,list)
+        self.save_file(guest_list)
+        print("\nFinish \nPlease check output.txt file too.")
 
 if __name__ == "__main__":
     try:
-        main()
+        a = Hsine(EARTH, OFFICE, URL)
+        a.main()
     except KeyboardInterrupt:
         print("Sajonara!")
         sys.exit(0)

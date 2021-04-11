@@ -1,4 +1,4 @@
-import requests, json
+import sys, requests, json
 
 #Parses file from URL and returns list 
 class File:
@@ -8,7 +8,13 @@ class File:
 
     #Returns txt from URL
     def get_file(self):
+
         r = requests.get(self.url)
+
+        if r.status_code != 200:
+            raise Exception('URL is not accesible!')
+            sys.exit(0)
+
         s = r.text
         return s
 

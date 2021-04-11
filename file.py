@@ -22,7 +22,6 @@ class File:
     def parse_file(self):
         j = self.get_file()
         list = []
-        #TODO Validate input
         for i in j.split('\n'):
             list.append(json.loads(i)) 
         return list

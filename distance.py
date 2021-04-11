@@ -33,3 +33,4 @@ class Distance:
         d = sin(lat * 0.5) ** 2 + cos(lat1) * cos(lat2) * sin(lng * 0.5) ** 2
 
         return int(2 * self.earth  * asin(sqrt(d)))
+

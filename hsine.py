@@ -1,4 +1,5 @@
 #!/usr/bin/python
+
 from distance import Distance
 from file import File
 import argparse

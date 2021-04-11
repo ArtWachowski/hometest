@@ -33,7 +33,6 @@ Script was developed and tested on linux.
 python3 hsine.py -t 
 
 ```
-
 ## License
 
 CC

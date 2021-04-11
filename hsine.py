@@ -1,7 +1,8 @@
 #!/usr/bin/python
 from distance import Distance
 from file import File
-#import json
+import argparse
+import sys, os
 
 # mean earth radius - https://en.wikipedia.org/wiki/Earth_radius#Mean_radius
 EARTH = 6371.0088
@@ -47,9 +48,21 @@ class Hsine:
         print("\nFinish \nPlease check output.txt file too.")
 
 if __name__ == "__main__":
+
+    def getOptions(args=sys.argv[1:]):
+        parser = argparse.ArgumentParser(description="Hsine Menu")
+        parser.add_argument("-t", "--test", dest='t', action="store_true", help="Runs Unit Test")
+        opt = parser.parse_args()
+        return opt
+
     try:
-        a = Hsine(EARTH, OFFICE, URL)
-        a.main()
+        opt = getOptions(sys.argv[1:])
+        if opt.t:
+            print("UniTest Module")
+            os.system('python3 test_hsine.py')
+        else:
+            a = Hsine(EARTH, OFFICE, URL)
+            a.main()
     except KeyboardInterrupt:
         print("Sajonara!")
         sys.exit(0)

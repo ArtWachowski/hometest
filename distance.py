@@ -14,8 +14,8 @@ class Distance:
         lat2 = float(la)
         lng2 = float(lo)
 
-        #Validating ranges
-        if not (0.0 <= lat2 <= 90.0):
+        #Validating ranges https://docs.mapbox.com/help/glossary/lat-lon/#
+        if not (-90.0 <= lat2 <= 90.0):
             raise Exception('Latitude out of range')
 
         if not (-180.0 <= lng2 <= 180.0):

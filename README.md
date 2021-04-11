@@ -1,6 +1,6 @@
 # Readme
 
-Hi! 
+... 
 
 ## Installation
 
@@ -10,15 +10,23 @@ git clone https://github.com/ArtWachowski/hometest.git
 
 ```python
 
-1. python3 hsine.py
+python3 hsine.py [-h] [-t]
 
-2. cat output.txt
+Hsine Menu
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -t, --test  Runs Unit Test
 
 ```
 
-## Contributing
+## Testing 
 
-N/A
+```python
+
+python3 hsine.py -t 
+
+```
 
 ## License
 

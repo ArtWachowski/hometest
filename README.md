@@ -2,7 +2,7 @@
 
 Script will parse data directly from provided URL and store grades to output.txt locally.
 
-When running script `python3 hsine.py -t` the output.txt will contain test data.
+When running script `python3 hsine.py -t` the output.txt will contain unfiltered test data.
 
 ## Installation
 

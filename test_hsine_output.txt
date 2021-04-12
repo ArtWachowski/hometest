@@ -1,0 +1,14 @@
+UniTest Module
+test_a_distance (__main__.TestValidator) ... DISTANCE TESTS PASSED
+ok
+test_b_guestlist (__main__.TestValidator) ... GLIST FILTERING and SORTING TESTS PASSED
+ok
+test_c_url (__main__.TestValidator) ... URL TEXT PARSING TESTS PASSED
+ok
+test_d_filesave (__main__.TestValidator) ... SAVE FILE TEST PASSED
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.183s
+
+OK
